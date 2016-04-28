@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="testApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Assessment 3</title>
+    <script src="vendors/angular/angular.min.js"></script>
+    <script src="assets/scripts/client.min.js"></script>
+    <link rel="stylesheet" href = "vendors/bootstrap/dist/css/bootstrap.min.css" />
+  </head>
+  <body class="container" ng-controller="SuperController as super">
+    <div class="jumbotron">
+    <h1>MEAN Stack Assessment</h1>
+      <ul style="list-style-type: none;">
+        <li>
+          Superhero Alias: <input type="text" ng-model="super.superdata.alias"  />
+        </li>
+        <li>
+          First Name: <input type="text" ng-model="super.superdata.first_name"  />
+        </li>
+        <li>
+          Last Name: <input type="text" ng-model="super.superdata.last_name"  />
+        </li>
+        <li>
+          City: <input type="text" ng-model="super.superdata.city"  />
+        </li>
+        <li>
+          Super Power: Select From...
+          Invisibility <input type="radio" value="Invisibility" ng-model="super.superdata.power_name"  />
+          Flight <input type="radio" value="Flight" ng-model="super.superdata.power_name"  />
+          Super Speed <input type="radio" value="Super Speed" ng-model="super.superdata.power_name"  />
+          Heat Vision <input type="radio" value="Heat Vision" ng-model="super.superdata.power_name"  />
+          Super Strength <input type="radio" value="Super Strength" ng-model="super.superdata.power_name"  />
+          Accelerated Healing <input type="radio" value="Accelerated Healing" ng-model="super.superdata.power_name"  />
+          Power Blast <input type="radio" value="Power Blast" ng-model="super.superdata.power_name"  />
+          Animal Affinity <input type="radio" value="Animal Affinity" ng-model="super.superdata.power_name"  />
+        </li>
+      </ul>
+      <button class="btn btn-danger btn-lg" ng-click="super.sendData()">SUBMIT</button>
+    </div>
+    <div class="well">
+      <div ng-repeat="sup in super.superheroes">
+        <ul style="list-style-type: none;">
+          <li>
+            Alias: {{sup.alias}}
+          </li>
+          <li>
+            First Name: {{sup.first_name}}
+          </li>
+          <li>
+            Last Name: {{sup.last_name}}
+          </li>
+          <li>
+            City: {{sup.city}}
+          </li>
+          <li>
+            Power Name: {{sup.power_name}}
+          </li>
+          <button ng-click="super.remove()">Remove hero</button>
+        </ul>
+
+      </div>
+    </div>
+  </body>
+</html>
